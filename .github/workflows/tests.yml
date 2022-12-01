@@ -12,15 +12,15 @@ on:
 jobs:
   linter:
     name: linter
-    runs-on: ubuntu-18.04
+    runs-on: debian-bullseye
     steps:
       - uses: actions/checkout@v3
       - name: Install pipenv
         run: pipx install pipenv
-      - name: Set up Python 3.8
+      - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version: "3.10"
           cache: "pipenv"
       - name: Install dependencies
         run: pipenv install --dev
